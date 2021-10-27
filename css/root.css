@@ -1,0 +1,536 @@
+@import '../plugins/fontawesome/css/all.css';
+
+html
+{
+  /* HEADER */
+  /* --header: linear-gradient(to bottom, cornflowerblue, dodgerblue); */
+
+  /* CORES PADRÕES */
+  --verde: #198754;
+  --verde_hover: #0f7345;
+
+  --azul: #0d6efd;
+  --azul_hover: #005ee8;
+
+  --amarelo: #ffc107;
+  --amarelo_hover: #f5b800;
+
+  --info: #0dcaf0;
+  --info_hover: #07b5d8;
+
+  --cinza: #dedede;
+  --cinza_escuro: #888888;
+  --cinza_hover: #C1C2C1;
+
+  --vermelho: #dc3545;
+  --vermelho_hover: #d22536;
+
+  --dark: #212529;
+  --dark_hover: #000000;
+
+  --branco: #f8f9fa;
+  --branco_hover: #edeff1;
+
+  /* TEXT COLORS */
+  --text: #4b4b4b;
+  --title: #444;
+  --text-invert: #ebebeb;
+  --placeholder: #00000060;
+
+  /* EFFECTS COLORS */
+  --effect: #e62e55;
+
+  /* INPUT FIELD COLOR CONTROLLER */
+  --border-text: #9a9a9a;
+
+  /* AUXILIAR DIFFERENT COLLORS */
+  --aux-gray: #808080;
+
+  /* BACKGROUND PRINCIPAL */
+  --background: #f1f1f1;
+  --background2: #fcfcfc;
+
+  /* SHADOWS */
+  --shadow-google: lightgray;
+  --shadow-sweet: #00000070;
+
+  /* TRANSITIONS TIME */
+  --transition_fast: .25s;
+  --transition_medium: .5s;
+  --transition_lower: 1s;
+
+  /* HOVER SCALES */
+  --scale_sm: scale(1.1);
+  --scale_md: scale(1.2);
+  --scale_lg: scale(1.3);
+  --scale_xg: scale(1.4);
+  --scale_ug: scale(1.5);
+
+  /* RESPONSIVIDADE */
+  --sm: 320px;
+  --md: 480px;
+  --lg: 768px;
+  --xg: 1024px;
+  --desktop: 1200px;
+}
+
+html.dark
+{
+  /* CORES PADRÕES */
+  --vermelho: #ff5d6d;
+
+  /* TEXT COLORS */
+  --text: #ebebeb;
+  --title: #ebebeb;
+  --text-invert: #444;
+  --placeholder: #00000060;
+  
+  /* EFFECTS COLORS */
+  --effect: #ff89a1;
+
+  /* INPUT FIELD COLOR CONTROLLER */
+  --border-text: #9a9a9a;
+
+  /* AUXILIAR DIFFERENT COLLORS */
+  --aux-gray: #808080;
+
+  /* BACKGROUND PRINCIPAL */
+  --background: #272727;
+  --background2: #1b1b1b;
+}
+
+
+
+
+/* CONFIGURAÇÕES GERAIS
+--------------------------------------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--aux-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--effect);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color: var(--text);
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+body {
+  background-color: var(--background);
+}
+
+.noty_body {
+  color: white !important;
+}
+
+.btn-effect {
+  border: none;
+  width: 347px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: var(--background2);
+  background: var(--effect);
+  -webkit-box-shadow: 0 0 5px #00000030;
+  transition: var(--transition_fast) ease-out;
+}
+.btn-effect path, .btn-effect svg { color: white; }
+.btn-effect:hover { background: var(--vermelho); }
+
+input:disabled,
+input:disabled + label {
+  cursor: not-allowed;
+  background: var(--background) !important;
+}
+
+
+/* DISPLAYS
+--------------------------------------------------------------------------------*/
+.none { display: none !important; }
+.flex { display: flex !important; }
+.grid { display: grid !important; }
+.block { display: block !important; }
+
+
+
+
+/* CONFIGURAÇÕES ICONES
+--------------------------------------------------------------------------------*/
+.v-icon {
+  width: auto;
+  height: auto;
+}
+.v-icon:hover path, .v-icon svg {
+  color: var(--effect);
+}
+
+h3.address, path, svg {
+  cursor: pointer;
+  transition: .15s ease-out;
+}
+
+h3.address:hover, h3.address:hover path, h3.address:hover svg {
+  color: var(--effect);
+}
+
+.rotate180 {
+  transform: rotate(-180deg);
+}
+
+
+
+/* CONFIGURAÇÕES INPUTS 
+--------------------------------------------------------------------------------*/
+.input-field {
+  margin: 10px 0 5px 0;
+  padding-top: 13px;
+  position: relative;
+}
+
+.input-field input, .input-field select {
+  border: 1px solid var(--border-text) !important;
+  border-radius: 4px;
+  outline: none;
+  min-width: 250px;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  background: none;
+  transition: all .1s linear; border: 2px solid var(--effect);
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -webkit-appearance:none;
+}
+.input-field input:focus { border: 2px solid var(--effect) !important; }
+.input-field input::placeholder { color: transparent; } 
+
+.input-field label { 
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 18px);
+  left: 15px;
+  font-size: 18px;
+  color: var(--border-text);
+  background: var(--background);
+  transition: all .1s linear;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -15px;
+  font-size: 14px;
+  color: var(--effect);
+}
+
+.input-field small {
+  margin: 5px 0 5px 0;
+  color: var(--vermelho);
+}
+
+
+
+
+/* CONFIGURAÇÕES CABEÇALHO DAS PÁGINAS
+--------------------------------------------------------------------------------*/
+header.toolbar {
+  z-index: 9;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--background2);
+  -webkit-box-shadow: 0 0 5px var(--shadow-sweet);
+}
+
+header.toolbar .tools {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.toolbar .tools .profile {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px lightgray;
+}
+
+.container-config {
+  top: 80px;
+  left: 20px;
+  z-index: -1;
+  background: none;
+  position: absolute;
+  transition: .2s ease-out;
+}
+
+header.toolbar .tools .config-tools {
+  width: 348px;
+  display: grid;
+  padding: 20px 0;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-items: center;
+  background: var(--background2);
+  grid-template-columns: 15% 70% 15%;
+  -webkit-box-shadow: 0 0 5px #00000030;
+}
+
+header.toolbar .tools .config-tools .config-address {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+header.toolbar .tools .config-tools .config-address:hover path,
+header.toolbar .tools .config-tools .config-address:hover svg {
+  color: var(--effect);
+}
+
+header.toolbar .tools .container-config .config-tools.selected {
+  border: 1px solid var(--effect);
+}
+
+header.toolbar .tools .container-config .config-tools.selected:before {
+  content: '\f058';
+  font-family: "Font Awesome 5 Free";
+  
+  top: 10px;
+  right: 15%;
+  width: .98rem;
+  height: .98rem;
+  font-size: 1rem; 
+  color: var(--background);
+  background: var(--effect);
+  position: absolute;
+  border-radius: 50%;
+}
+
+header.toolbar .tools .container-config.visible-config {
+  top: -100vh;
+}
+
+header.toolbar .tools .container-config .config-tools h4:last-child {
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+header.toolbar .tools  .container-config .config-tools-card {
+  overflow: auto;
+  max-height: 238px;
+  padding: 0 10px 0 0;
+}
+
+button.add-address-button {
+  border: none;
+  width: 347px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: var(--background2);
+  background: var(--effect);
+  -webkit-box-shadow: 0 0 5px #00000030;
+  transition: var(--transition_fast) ease-out;
+}
+
+button.add-address-button:hover { background: var(--vermelho); }
+
+button.add-address-button path, 
+button.add-address-button svg {
+  color: var(--background2);
+}
+
+@media (max-width: 450px)
+{
+    header.toolbar .tools .config-tools {
+        width: 280px;
+    }
+    button.add-address-button {
+        width: 279px;
+    }
+}
+
+
+
+
+/* CONFIGURAÇÕES LINKS DE NAVEGAÇÃO
+--------------------------------------------------------------------------------*/
+.dinamic-links {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+
+  right: 80px;
+  position: absolute;
+}
+
+.dinamic-links .container-link {
+  display: flex;
+  margin: 0 20px;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.dinamic-links .container-link:hover path,
+.dinamic-links .container-link:hover svg,
+.dinamic-links .container-link:hover label {
+  color: var(--effect);
+}
+
+.dinamic-links .container-link label {
+  cursor: pointer;
+  font-size: .9rem;
+  margin-top: .1rem;
+}
+
+@media (max-width: 768px)
+{
+    .dinamic-links {
+        padding: 25px 20px;
+        background: white;
+
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+    }
+    
+    .dinamic-links .container-link {
+        margin: 0 6%;
+    }
+}
+
+
+/* CONFIGURAÇÕES MODAIS
+--------------------------------------------------------------------------------*/
+.over-modal.active {
+  filter: blur(2);
+}
+
+.container-modal {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  position: absolute;
+  background: #00000080;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-modal .modal {
+  width: 50%;
+  min-width: 30%;
+  max-width: 80%;
+  position: relative;
+  border-radius: 4px;
+  background: var(--background2);
+}
+
+.container-modal .modal .v-icon path,
+.container-modal .modal .v-icon svg {
+  color: var(--background2);
+}
+.container-modal .modal .v-icon:hover path,
+.container-modal .modal .v-icon:hover svg {
+  color: var(--effect);
+}
+
+.container-modal .modal .v-icon {
+  top: -10px;
+  right: -5px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  position: absolute;
+  background: var(--text);
+  -webkit-box-shadow: 0 0 5px #00000030;
+}
+
+.container-modal .modal .modal-header { border-bottom: 1px solid var(--cinza_hover); }
+.container-modal .modal .modal-body { max-height: 260px; overflow: hidden auto; }
+.container-modal .modal .modal-header,
+.container-modal .modal .modal-footer { padding: 15px 20px; }
+.container-modal .modal .modal-body { padding: 0 20px 0 20px; }
+.container-modal .modal .modal-footer { display: flex; justify-content: center; }
+.container-modal .modal .modal-footer .btn-effect { width: 100%; }
+
+.modal .input-field label {
+  top: calc(50% - 12px);
+  background: var(--background2);
+}
+
+.modal .input-field input:focus + label,
+.modal .input-field input:not(:placeholder-shown) + label {
+  top: -4px;
+}
+
+@media (max-width: 768px)
+{ 
+  .container-modal .modal {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
+/* MODAL CADASTRO */
+.modal-cadastro-endereco .modal-body {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 48%);
+}
+
+@media (max-width: 620px)
+{
+  .modal-cadastro-endereco .modal-body {
+      grid-template-columns: 100% !important;
+  }
+}
+
+@media (min-width: 621px)
+{
+  .modal-cadastro-endereco .modal-body {
+      grid-template-columns: repeat(2, 48%) !important;
+  }
+}
+
+@media (min-width: 765px)
+{
+  .modal-cadastro-endereco .modal-body {
+      grid-template-columns: 100% !important;
+  }
+}
+
+@media (min-width: 1100px)
+{
+  .modal-cadastro-endereco .modal-body {
+      grid-template-columns: repeat(2, 48%) !important;
+  }
+}
