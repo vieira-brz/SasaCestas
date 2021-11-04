@@ -1,6 +1,6 @@
 <?php include 'verifySession.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +16,13 @@
     <script src="../js/inicial.js"></script>
 
     <!-- TITULO -->
-    <title>Sasa Cestas | Início</title>
+    <title>Sasa Cestas | Bem-vindo <?php echo $_SESSION[session_id()]['usuario']; ?></title>
 </head>
 <body>
-    <div class="over-modal">
+    <div class="over-modal none">
         <?php include_once 'template/cabecalho.html'; ?>
     
         <main>
-            
         </main>
     </div>
     <?php include_once 'template/modals.html'; ?>

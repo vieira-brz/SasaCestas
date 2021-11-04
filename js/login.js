@@ -1,5 +1,13 @@
 $(document).ready(function()
 {   
+    // Foco no input - cor label
+    $('input').focus(function(e) { $(this).closest('div').find('label').css('color', 'var(--effect)'); });
+
+
+    // Desfoco no input - cor label
+    $('input').focusout(function(e) { $(this).closest('div').find('label').css('color', 'var(--border-text)'); });
+    
+    
     // DIGITAÇÃO NO INPUT - REMOVE SMALL
     $('input').keyup(function(e) { 
         

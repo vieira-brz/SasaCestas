@@ -3,7 +3,9 @@
     <div class="modal modal-cadastro-endereco none">
         <div class="modal-header">
             <h3>Adicionar endereço</h3>
+            <div class="v-icon" name="close-modal"> <i class="fas fa-times"></i> </div>
         </div>
+        <!-- <h5>Insira seu CEP para o preenchimento automático de informações:</h5> -->
         <div class="modal-body none-footer">
             <div class="input-field">
                 <div class="text-field">
@@ -12,35 +14,42 @@
                 </div>
                 <small class="endereco-cep none">* Este campo é obrigatório</small>
             </div>
-            <div class="input-field">
-                <div class="text-field">
-                    <input autocomplete="off" type="text" placeholder="..." id="logradouro" required disabled>
-                    <label>Insira o endereço: </label>
+            
+            <div class="loading none"> <img src="../img/loader.gif" alt="Carregando..."> </div>
+            
+            <div class="modal-body-endereco-grid">
+                <div class="input-field none">
+                    <div class="text-field">
+                        <input autocomplete="off" type="text" placeholder="..." id="logradouro" required disabled>
+                        <label>Insira o endereço: </label>
+                    </div>
+                    <small class="endereco-logradouro none">* Este campo é obrigatório</small>
                 </div>
-                <small class="endereco-logradouro none">* Este campo é obrigatório</small>
-            </div>
-            <div class="input-field">
-                <div class="text-field">
-                    <input autocomplete="off" type="text" placeholder="..." id="numero" required disabled>
-                    <label>Insira o número: </label>
+                <div class="input-field none">
+                    <div class="text-field">
+                        <input autocomplete="off" type="text" placeholder="..." id="numero" required disabled>
+                        <label>Insira o número: </label>
+                    </div>
+                    <small class="endereco-numero none">* Este campo é obrigatório</small>
                 </div>
-                <small class="endereco-numero none">* Este campo é obrigatório</small>
             </div>
-            <div class="input-field">
-                <div class="text-field">
-                    <input autocomplete="off" type="text" placeholder="..." id="localidade" required disabled>
-                    <label>Insira sua cidade: </label>
+            <div class="modal-body-endereco-grid">
+                <div class="input-field none">
+                    <div class="text-field">
+                        <input autocomplete="off" type="text" placeholder="..." id="uf" required disabled>
+                        <label>Insira seu estado: </label>
+                    </div>
+                    <small class="endereco-uf none">* Este campo é obrigatório</small>
                 </div>
-                <small class="endereco-localidade none">* Este campo é obrigatório</small>
-            </div>
-            <div class="input-field">
-                <div class="text-field">
-                    <input autocomplete="off" type="text" placeholder="..." id="uf" required disabled>
-                    <label>Insira seu estado: </label>
+                <div class="input-field none">
+                    <div class="text-field">
+                        <input autocomplete="off" type="text" placeholder="..." id="localidade" required disabled>
+                        <label>Insira sua cidade: </label>
+                    </div>
+                    <small class="endereco-localidade none">* Este campo é obrigatório</small>
                 </div>
-                <small class="endereco-uf none">* Este campo é obrigatório</small>
             </div>
-            <div class="input-field">
+            <div class="input-field none">
                 <div class="text-field">
                     <select name="ambiente">
                         <option value="#" selected disabled>Favoritar como:</option>
@@ -55,7 +64,6 @@
         <div class="modal-footer">
             <button class="btn-effect" name="addAddress">ADICIONAR ENDEREÇO &nbsp<i class="fas fa-plus"></i> </button>
         </div>
-        <div class="v-icon" name="close-modal"> <i class="fas fa-times"></i> </div>
     </div>
 
 </div>

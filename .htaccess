@@ -1,0 +1,19 @@
+# RETIRANDO ' INDEX.PHP ' DA URL
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^(.*)index.php$ /$1 [L,R=301]
+RewriteRule ^/$ http://localhost/global/ [L,R=301]
+
+# RETIRANDO EXTENSÃO .PHP DA URL
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+# REDIRECIONA ERRO 404 PARA PÁGINA 404
+ErrorDocument 404 /404/notFound.html
+
+# HTID:17097647: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:17097647:

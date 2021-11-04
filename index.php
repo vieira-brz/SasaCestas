@@ -24,9 +24,6 @@
     <script src="plugins/node_modules/noty/lib/noty.js"></script>
     <script src="js/notifier.js"></script>
 
-    <!-- CONFIG JAVASCRIPT -->
-    <script src="js/config.js"></script>
-
     <!-- JAVASCRIPT -->
     <script src="js/login.js"></script>
 

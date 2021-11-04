@@ -21,7 +21,8 @@
                     'id' => $verificacao[0]['ID'],
                     'email' => $verificacao[0]['EMAIL'],
                     'senha' =>  $verificacao[0]['SENHA'],
-                    'usuario' =>  $verificacao[0]['USUARIO']
+                    'usuario' =>  $verificacao[0]['USUARIO'],
+                    'acesso' =>  $verificacao[0]['ACESSO'],
                 );
 
                 // Dado encontrado -> logar

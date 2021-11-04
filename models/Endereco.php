@@ -15,6 +15,16 @@
             return $stmt->rowCount();
         }        
         
+        // Deletar endereço clicado
+        public function deletar($post)
+        {
+            $query = 'delete from '. $this->dbname .'.enderecos where ID_USUARIO = '. $post['idUser'] .' and ID = '. $post['id'];
+            $stmt = $this->conn->prepare($query);       
+
+            $stmt->execute();
+            return $stmt->rowCount();
+        }        
+        
         // Recuperar todos os endereços do usuário
         public function buscaEnderecos($id)
         {
@@ -27,7 +37,7 @@
             else { return false; }
         }
         
-        // Recuperar todos os endereços do usuário
+        // Selecionar endereço clicado
         public function selecionarEndereco($post)
         {
             // Setando todos os endereços como inativos

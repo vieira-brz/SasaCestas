@@ -23,6 +23,23 @@
             }
         break;
 
+
+        case 'deletar':            
+
+            // Deletando endereço clicado
+            $retorno = $endereco->deletar($control);
+
+            if ($retorno == 1)
+            {
+                echo '1';
+            }
+            else 
+            {
+                echo 'Erro: Não foi possível deletar este endereço! Tente novamente.';
+            }
+        break;
+
+
         case 'buscaEnderecos':
         
             // Buscando endereços do usuário
@@ -40,6 +57,7 @@
                 echo 'Erro: Não foi possível buscar seus endereços salvos! Tente recarregar a página.';
             }
         break;
+
 
         case 'cadastrar':
 

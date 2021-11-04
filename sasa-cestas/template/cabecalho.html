@@ -1,297 +1,58 @@
 <!-- MOJS CONFIG -->
 <script src="../plugins/node_modules/@mojs/core/dist/mo.umd.js"></script>
 <script src="../js/mo.config.js"></script>
+<script src="../js/address.js"></script>
 
 <!-- CABECALHO -->
 <header class="toolbar">
 
     <div class="tools">
+
         <h3 class="address">Clique para adicionar um endereço &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i> </h3>
 
         <div class="dinamic-links">
-            <a href="/sasa-cestas" class="container-link">
+            <a href="http://localhost/SasaCestas/sasa-cestas" class="container-link">
                 <i class="fas fa-home"></i>
                 <label>Início</label>
             </a>
-            <a href="/pedidos" class="container-link">
+            <a href="http://localhost/SasaCestas/sasa-cestas/pedidos" class="container-link">
                 <i class="fas fa-list-alt"></i>
                 <label>Pedidos</label>
             </a>
-            <a href="/chat" class="container-link">
+            <a href="http://localhost/SasaCestas/sasa-cestas/chat" class="container-link">
                 <i class="fas fa-comment-dots"></i>
                 <label>Chat</label>
             </a>
-            <a href="/estatisticas" class="container-link">
+            <a href="http://localhost/SasaCestas/sasa-cestas/estatisticas" class="container-link">
                 <i class="fas fa-chart-bar"></i>
                 <label>Estatísticas</label>
             </a>
         </div>
 
-        <img class="profile" src="https://www.w3schools.com/w3images/avatar6.png" alt="foto-de-perfil">
-
-        <div class="container-config visible-config">
-            <div class="config-tools-card"></div>
-            <div class="config-tools-add">
-                <button class="add-address-button" type="button" name="add-address">ADICIONAR ENDEREÇO &nbsp<i class="fas fa-plus"></i> </button>
-            </div>
+        <div class="relative-profile">
+            <img class="profile" src="https://www.w3schools.com/w3images/avatar6.png" alt="foto-de-perfil">
+        </div>
+        
+    </div>
+    
+    <!-- CONTAINER PERFIL -->
+    <div class="container-profile-config-bg none">
+        <div class="container-profile-config">
+            <div class="profile-config-edit"> <img class="profile" src="https://www.w3schools.com/w3images/avatar6.png" alt="foto-de-perfil"> <i class="fas fa-camera"></i> </div>
+            <h4 id="config-acc-name">NAME</h4>
+            <p id="config-acc-email">exemplo@gmail.com</p>
+            <button name="config-acc-gerenciar">Gerenciar sua Conta</button> <hr>
+            <button name="config-acc-logoff">Sair</button> <hr>
+            <p>Todos os direitos reservados - 2021</p>
         </div>
     </div>
-
-    <script>
-    /* ----------------------------------------------------------
-        CAIXA DE ENDEREÇO 
-    -----------------------------------------------------------*/
-    $.get('../controllers/session', function(data)
-    {
-        $(document).ready(function()
-        {
-            // $('input').focusout(function(e) { $(this).closest('div').find('label').css('color', 'var(--border-text)'); });
-
-            var config = JSON.parse(data);
-            configId = config.ID;
-            configEmail = config.EMAIL;
-            configUsuario = config.USUARIO;
-
-            // Consultando CEP
-            const cep = $("#cep");
-            cep.mask('00000-000');
-
-            const showData = (result)=> 
-            { 
-                for(const campo in  result) 
-                { 
-                    if($("#"+campo)) 
-                    { 
-                        $("#"+campo).val(result[campo]);
-                        $('#'+campo).closest('div').find('label').css('color', 'var(--border-text)');
-                    } 
-                } 
-            }
-            
-            cep.on("keyup" , ()=>
-            {
-                if (cep.val().length == 9)
-                {
-                    $('.modal-cadastro-endereco').find('input').each(function(el) { $(this).prop('disabled', false); });
-        
-                    let search = cep.val().replace("-","");
-                    const options = {
-                        method: 'GET' ,
-                        mode: 'cors' ,
-                        cache: 'default'
-                    }
-                    fetch(`https://viacep.com.br/ws/${search}/json/`, options)
-                    .then(response => 
-                    {
-                        response.json().then( data => showData(data))
-                    })
-                    .catch(e => console.log('Erro: '+ e.message))
-
-                    $('#numero').focus();
-                }
-            });
-
-            // Clicar no endereço e abrir/fechar caixa de configuração
-            $('h3.address').click(function(e) {
-        
-                $(this).find('svg, path').toggleClass('rotate180');
-                
-                $('.container-config').toggleClass('visible-config');
-            });
-
-            // Abrindo modais
-            $('button[name="add-address"]').click(function(e) {
-
-                $('.over-modal').addClass('active');
-                $('.container-modal').removeClass('none');
-                $('.modal-cadastro-endereco').removeClass('none');
-
-                $('.container-config').toggleClass('visible-config');
-                $('.tools').find('h3.address').find('svg, path').toggleClass('rotate180');
-            });
-        
-            // Cadastrando novo endereço do usuário
-            $('button[name="addAddress"]').click(function(e)
-            {
-                e.preventDefault();
-        
-                let uf = $('#uf').val();
-                let cep = $('#cep').val();
-                let numero = $('#numero').val();
-                let logradouro = $('#logradouro').val();
-                let localidade = $('#localidade').val();
-                let ambiente = $('select[name="ambiente"]').val();
-        
-                if (uf == '') { noty('warning', 'O campo "UF" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                if (cep == '') { noty('warning', 'O campo "CEP" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                if (numero == '') { noty('warning', 'O campo "NUMERO" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                if (logradouro == '') { noty('warning', 'O campo "ENDERECO" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                if (localidade == '') { noty('warning', 'O campo "CIDADE" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                if (ambiente == '' || ambiente == '#' || ambiente == null) { noty('warning', 'O campo "FAVORITAR" é obrigatório e deve ser preenchido!', 'topLeft', true, false, false); }
-                
-                if (
-                    uf != '' && 
-                    cep != '' && 
-                    numero != '' && 
-                    logradouro != '' && 
-                    localidade != '' && 
-                    ambiente != null && ambiente != '' && ambiente != '#'  
-                )
-                {
-                    $.post('../controllers/endereco', 
-                    {
-                        control: {
-                            action: 'cadastrar',
-                            idUser: configId,
-                            endereco: logradouro,
-                            numero: numero,
-                            ambiente: ambiente,
-                            cep: cep,
-                            cidade: localidade,
-                            estado: uf,
-                            ativo: 'N',
-                        }
-                    },
-                    function(data)
-                    {
-                        if (data == '1')
-                        {
-                            location.reload();
-                        }
-                        else 
-                        {
-                            noty('error', data, 'topLeft', true, false, true);
-                        }
-                    });
-                }
-        
-                e.stopImmediatePropagation();
-            });
-        
-            // Clicando no card do endereço e selecionando ele como padrão de entrega
-            $('.config-tools-card').on('click', '.config-tools', function(e) {
-                
-                e.preventDefault();
-
-                let id = $(this).attr('id');
-                $.post('../controllers/endereco', 
-                {
-                    control: {
-                        action: 'selecionar',
-                        id: id,
-                        idUser: configId
-                    }
-                }, 
-                function(data)
-                {
-                    if (data == '1')
-                    {
-                        $('.config-tools').each(function(el)
-                        {
-                            $(this).removeClass('selected');
-                        });
-
-                        $('#'+ id).addClass('selected');
-                        
-                        let novoEnderecoSelecionado = $('#'+ id).find('.config-address-info').text();
-                        novoEnderecoSelecionado = novoEnderecoSelecionado.split(' - ');
-                        novoEnderecoSelecionado = novoEnderecoSelecionado[0];
-                        
-                        $('.tools').find('h3.address').html(novoEnderecoSelecionado +' &nbsp <i class="fas fa-chevron-down rotate180" style="margin-bottom:-.5%;"></i>');
-                    }
-                    else 
-                    {
-                        noty('error', data, 'topLeft', true, false, true);
-                    }
-                });
-        
-                e.stopImmediatePropagation();
-            });
-        
-            // Buscando todos os endereços do usuário
-            $.post('../controllers/endereco',
-            {
-                control: {
-                    action: 'buscaEnderecos',
-                    id: configId
-                }
-            }, 
-            function(enderecos)
-            {
-                let jsonParse = JSON.parse(enderecos);
-
-                $.each(jsonParse, function(i, k)
-                {
-                    let icon = '';
-                    switch (k.AMBIENTE) 
-                    {
-                        case 'Casa':
-                            icon = 'fa-home';
-                        break;
-                        case 'Trabalho':
-                            icon = 'fa-mug-hot';
-                        break;
-                        default:
-                            icon = 'fa-qualquer';
-                        break;
-                    }
     
-                    if (k.ATIVO == 'S' || jsonParse.length == 1)
-                    {
-                        $('.container-config').find('.config-tools-card').prepend(
-                        `
-                            <div class="config-tools selected" id="`+ k.ID +`" style="cursor:pointer;">
-                                <i class="fas `+ icon +`"></i>
-                                <div class="address-info">
-                                    <h4>`+ k.AMBIENTE +`</h4>
-                                    <h4 class="config-address-info">`+ k.ENDERECO +`, `+ k.NUMERO +` - `+ k.CIDADE +`, `+ k.ESTADO +` - `+ k.CEP +`</h4>
-                                </div>
-                                <div class="config-address"> <div class="v-icon"> <i class="fas fa-ellipsis-v"></i> </div> </div>
-                            </div>
-                        `
-                        );
+    <!-- CONTAINER ENDEREÇO -->
+    <div class="container-config visible-config">
+        <div class="config-tools-card"></div>
+        <div class="config-tools-add">
+            <button class="add-address-button" type="button" name="add-address">ADICIONAR ENDEREÇO &nbsp<i class="fas fa-plus"></i> </button>
+        </div>
+    </div>
     
-                        let headerEndereco = '';
-                        headerEndereco = k.ENDERECO.split(' ');
-                        headerEndereco = headerEndereco[0];
-    
-                        switch (headerEndereco) 
-                        {
-                            case 'Rua':
-                                headerEndereco = k.ENDERECO.replace('Rua', 'R.');
-                            break;
-                        
-                            case 'Avenida':
-                                headerEndereco = k.ENDERECO.replace('Avenida', 'Av.');
-                            break;
-                        
-                            default:
-                                headerEndereco = k.ENDERECO;
-                            break;
-                        }
-    
-                        $('.tools').find('h3.address').html(headerEndereco +', '+ k.NUMERO +' &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i>');
-                    }
-                    else 
-                    {
-                        $('.container-config').find('.config-tools-card').prepend(
-                        `
-                            <div class="config-tools" id="`+ k.ID +`" style="cursor:pointer;">
-                                <i class="fas `+ icon +`"></i>
-                                <div class="address-info">
-                                    <h4>`+ k.AMBIENTE +`</h4>
-                                    <h4 class="config-address-info">`+ k.ENDERECO +`, `+ k.NUMERO +` - `+ k.CIDADE +`, `+ k.ESTADO +` - `+ k.CEP +`</h4>
-                                </div>
-                                <div class="config-address"> <div class="v-icon"> <i class="fas fa-ellipsis-v"></i> </div> </div>
-                            </div>
-                        `
-                        );
-                    }
-                });
-            });
-        });
-    });
-
-    </script>
-
 </header>
