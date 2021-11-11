@@ -1,3 +1,9 @@
+// TEMA DA APLICAÇÃO
+theme = localStorage.getItem('dark');
+if (theme == null) { $('html').removeClass('dark'); }
+else { $('html').addClass('dark'); }
+
+
 $(document).ready(function()
 {   
     // Foco no input - cor label

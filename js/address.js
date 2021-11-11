@@ -34,19 +34,24 @@ $.get('../controllers/session', function(data)
                 let search = cep.val().replace("-","");
 
                 $('.modal-cadastro-endereco').find('.loading').removeClass('none');
+                $('.modal-body-endereco-grid').each(function(el){$(this).addClass('none');});
 
                 const options = {
                     method: 'GET' ,
                     mode: 'cors' ,
                     cache: 'default'
                 }
-                fetch(`https://viacep.com.br/ws/${search}/json/`, options)
-                .then(response => 
-                {
-                    response.json().then( data => showData(data))
-                    $('.modal-cadastro-endereco').find('.loading').addClass('none');
-                })
-                .catch(e => console.log('Erro: '+ e.message))
+                setTimeout(() => {
+                    
+                    fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+                    .then(response => 
+                    {
+                        response.json().then( data => showData(data))
+                        $('.modal-cadastro-endereco').find('.loading').addClass('none');
+                        $('.modal-body-endereco-grid').each(function(el){$(this).removeClass('none');});
+                    })
+                    .catch(e => console.log('Erro: '+ e.message))
+                }, 2000);
 
                 cep.focusout();
                 $('.input-field').each(function(el){$(this).removeClass('none');});
@@ -123,7 +128,7 @@ $.get('../controllers/session', function(data)
                 {
                     if (data == '1')
                     {
-                        $('.config-tools-card').find('.config-tools:last-child').click();
+                        $('.config-tools-card').find('.config-tools:nth-child(1)').click();
                         location.reload();
                     }
                     else 
@@ -229,6 +234,11 @@ $.get('../controllers/session', function(data)
         function(enderecos)
         {
             let jsonParse = JSON.parse(enderecos);
+
+            if (enderecos.charAt(0) != '<' && enderecos.charAt(0) != 'E')
+            {
+                $('.tools').find('h3.address').html('Selecione um endereço aqui &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i>');
+            }
 
             $.each(jsonParse, function(i, k)
             {

@@ -1,7 +1,6 @@
 // TEMA DA APLICAÇÃO
 theme = localStorage.getItem('dark');
-if (theme == null) { $('html').removeClass('dark'); }
-else { $('html').addClass('dark'); }
+if (theme == null) { $('html').removeClass('dark'); $('input[name="checkbox-theme"]').prop('checked', false); } else { $('html').addClass('dark'); $('input[name="checkbox-theme"]').prop('checked', true); }
 
 
 // PEGANDO DADOS DA SESSÃO
@@ -16,6 +15,15 @@ $.get('../controllers/session', function(data)
     // DOCUMENTO CARREGADO
     $(document).ready(function()
     {
+        // Alterando status de checagem do tema escuro na configuração de usuário
+        if (theme == null) { $('input[name="checkbox-theme"]').prop('checked', false); } else { $('input[name="checkbox-theme"]').prop('checked', true); }
+
+        // Abrindo estatisticas na nova pagina
+        $('button[name="config-acc-stats"]').click(function(e)
+        {
+            window.location.href = 'http://localhost/SasaCestas/sasa-cestas/estatisticas';
+        });
+
         /* ----------------------------------------------------------
             CAIXA LABEL DOS INPUTS 
         -----------------------------------------------------------*/
@@ -54,7 +62,8 @@ $.get('../controllers/session', function(data)
         // Removendo aba "estatísticas" para clientes
         if (configAcesso != 'MASTER')
         {
-            $('header.toolbar').find('.container-link:last-child').remove();
+            $('button[name="config-acc-stats"]').remove();
+            // $('header.toolbar').find('.container-link:last-child').remove();
         }
 
 
@@ -75,6 +84,27 @@ $.get('../controllers/session', function(data)
                 if (response == '1' || response == '0' || response.charAt(response.length - 1) == '1' || response.charAt(response.length - 1) == '0') { location.reload(); }
                 else { noty('error', response); }
             });
+        });
+
+
+        // Ativando / desativando modo escuro 
+        $('input[name="checkbox-theme"]').change(function(e)
+        {
+            e.preventDefault();
+
+            let checked = $(this).prop('checked');
+
+            if (checked == true)
+            {
+                $('html').addClass('dark');
+                localStorage.setItem('dark', true);
+            }
+            else 
+            {
+                $('html').removeClass('dark');
+                localStorage.removeItem('dark');
+            }
+            e.stopImmediatePropagation();
         });
     });
 });

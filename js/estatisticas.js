@@ -1,32 +1,28 @@
 $(document).ready(function()
 {
-    // $('html').addClass("dark");
+    let mesesUsers = [20, 30, 40, 50, 20, 30, 10, 30, 40, 5, 20, 40];
+    let mesesRenda = [220, 310, 140, 250, 420, 230, 110, 30, 240, 353, 320, 240];
+    let meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
-    let totalUsuarios = [20, 30, 40, 50, 20, 30, 10, 30, 40, 5, 20, 40];
-    let totalUsuariosMeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
-    grafico_hora_pico (totalUsuarios, totalUsuariosMeses);
-
-});
-
-function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
-{
     $('canvas').removeClass('none');
     $('center.loading').addClass('none');
 
+
+    // Gráfico 1
     var ctx = document.getElementById('chart1').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'line',
         data:
         {
-            labels: totalUsuariosMeses,
+            labels: meses,
             datasets: [
                 {
-                    label: 'USUÁRIOS ANUAIS',
+                    label: 'Usuários',
                     borderWidth: 2,
                     borderColor: '#e62e55',
                     backgroundColor: '#e62e5520',
-                    data: totalUsuarios,
+                    data: mesesUsers,
                 },
             ]
         },
@@ -50,23 +46,24 @@ function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
                 xAxes: [{ gridLines: { color: 'rgba(0, 0, 0, 0)', zeroLineColor:'transparent', } }],
                 yAxes: [{ gridLines: { color: '#d3d3d350', zeroLineColor:'transparent', },
                 ticks: {
+                    stepSize: 20,
                     beginAtZero: true,
-                    }
+                }
                 }],
             },
         }
     });
 
 
+    // Gráfico 2
     var ctx = document.getElementById('chart2').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'doughnut',
         data:
         {
-            labels: ['Queijo', 'Presunto', 'Rola'],
+            labels: ['Queijo', 'Presunto', 'Pão'],
             datasets: [
                 {
-                    label: 'USUÁRIOS ANUAIS',
                     borderWidth: 2,
                     borderColor: ['#FF9292', '#F4ABC4', '#C060A1'],
                     backgroundColor:  ['#FF9292', '#F4ABC4', '#C060A1'],
@@ -93,6 +90,7 @@ function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
     });
 
 
+    // Gráfico 3
     var ctx = document.getElementById('chart3').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'doughnut',
@@ -101,7 +99,6 @@ function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
             labels: ['Cartão', 'Dinheiro', 'Pix'],
             datasets: [
                 {
-                    label: 'USUÁRIOS ANUAIS',
                     borderWidth: 2,
                     borderColor: ['#FF9292', '#F4ABC4', '#C060A1'],
                     backgroundColor:  ['#FF9292', '#F4ABC4', '#C060A1'],
@@ -134,19 +131,20 @@ function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
     });
 
 
+    // Gráfico 4
     var ctx = document.getElementById('chart4').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'line',
         data:
         {
-            labels: totalUsuariosMeses,
+            labels: meses,
             datasets: [
                 {
-                    label: 'USUÁRIOS ANUAIS',
+                    label: 'Renda',
                     borderWidth: 2,
                     borderColor: '#e62e55',
                     backgroundColor: '#e62e5520',
-                    data: totalUsuarios,
+                    data: mesesRenda,
                 },
             ]
         },
@@ -170,10 +168,13 @@ function grafico_hora_pico (totalUsuarios, totalUsuariosMeses)
                 xAxes: [{ gridLines: { color: 'rgba(0, 0, 0, 0)', zeroLineColor:'transparent', } }],
                 yAxes: [{ gridLines: { color: '#d3d3d350', zeroLineColor:'transparent', },
                 ticks: {
+                    stepSize: 200,
                     beginAtZero: true,
-                    }
+                    callback: function (value) { return 'R$ '+ value; },
+                    scaleLabel: { display: true, labelString: 'Percentage', },
+                }
                 }],
             },
         }
     });
-}
+});

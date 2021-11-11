@@ -15,18 +15,22 @@
                 <i class="fas fa-home"></i>
                 <label>Início</label>
             </a>
+            <a href="http://localhost/SasaCestas/sasa-cestas/historico" class="container-link">
+                <i class="fas fa-history"></i>
+                <label>Histórico</label>
+            </a>
             <a href="http://localhost/SasaCestas/sasa-cestas/pedidos" class="container-link">
                 <i class="fas fa-list-alt"></i>
                 <label>Pedidos</label>
             </a>
-            <a href="http://localhost/SasaCestas/sasa-cestas/chat" class="container-link">
-                <i class="fas fa-comment-dots"></i>
-                <label>Chat</label>
+            <a href="http://localhost/SasaCestas/sasa-cestas/carrinho" class="container-link">
+                <i class="fas fa-shopping-cart"></i>
+                <label>Carrinho</label>
             </a>
-            <a href="http://localhost/SasaCestas/sasa-cestas/estatisticas" class="container-link">
+            <!-- <a href="http://localhost/SasaCestas/sasa-cestas/estatisticas" class="container-link">
                 <i class="fas fa-chart-bar"></i>
                 <label>Estatísticas</label>
-            </a>
+            </a> -->
         </div>
 
         <div class="relative-profile">
@@ -41,8 +45,19 @@
             <div class="profile-config-edit"> <img class="profile" src="https://www.w3schools.com/w3images/avatar6.png" alt="foto-de-perfil"> <i class="fas fa-camera"></i> </div>
             <h4 id="config-acc-name">NAME</h4>
             <p id="config-acc-email">exemplo@gmail.com</p>
-            <button name="config-acc-gerenciar">Gerenciar sua Conta</button> <hr>
-            <button name="config-acc-logoff">Sair</button> <hr>
+            <button name="config-acc-gerenciar">Gerenciar sua Conta</button> 
+            <hr>
+            <!-- <button name="config-acc-stats">Estatísticas</button>  -->
+            <!-- <hr> -->
+            <div class="flex" style="justify-content: space-between;">
+                <button name="config-acc-stats" style="margin: 20px 10px 20px 0 !important;">Estatísticas</button> 
+                <button name="config-acc-logoff">Sair</button> 
+            </div>
+            <hr>
+            <div class="slash-dark-mode">
+                <input type="checkbox" name="checkbox-theme"> Modo escuro
+            </div>
+            <hr>
             <p>Todos os direitos reservados - 2021</p>
         </div>
     </div>

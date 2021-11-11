@@ -234,6 +234,7 @@ h3.address:hover, h3.address:hover path, h3.address:hover svg {
   -webkit-transition: all .1s linear;
   -moz-transition: all .1s linear;
   padding: 5px;
+  border: none;
   box-sizing: border-box;
 }
 
@@ -316,6 +317,7 @@ header.toolbar .tools .relative-profile  { position: relative; }
   text-align: center;
   /* border-top: 1px solid var(--cinza_hover); */
 }
+.container-profile-config button[name="config-acc-stats"],  
 .container-profile-config button[name="config-acc-logoff"],  
 .container-profile-config button[name="config-acc-gerenciar"] { 
   margin: 20px 0; 
@@ -328,6 +330,7 @@ header.toolbar .tools .relative-profile  { position: relative; }
   border: 1px solid var(--cinza_hover);
   transition: var(--transition_fast) ease-out;
 }
+.container-profile-config button[name="config-acc-stats"]:hover,  
 .container-profile-config button[name="config-acc-logoff"]:hover,  
 .container-profile-config button[name="config-acc-gerenciar"]:hover { 
   color: var(--branco);
@@ -352,9 +355,22 @@ header.toolbar .tools .relative-profile  { position: relative; }
   right: -5px;
   position: absolute;
   border-radius: 50%;
+  -webkit-box-shadow: 0 0 3px;
   background: var(--background2);
 }
 .container-profile-config .profile-config-edit svg { padding: 2px; }
+
+
+
+.slash-dark-mode {
+  display: flex;
+  margin: 20px 0;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+}
+.slash-dark-mode input { margin: 0 5px 0 0; }
+
 
 
 .container-config {
@@ -421,7 +437,7 @@ header.toolbar .config-tools .config-address  .config-address-settings:hover svg
 }
 
 header.toolbar .container-config .config-tools.selected {
-  border: 1px solid var(--effect);
+  border: 2px solid var(--effect);
 }
 
 header.toolbar .container-config .config-tools.selected:before {

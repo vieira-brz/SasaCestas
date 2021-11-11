@@ -43,7 +43,7 @@
       <!-- LOGIN FORM -->
         <form class="entrar-form">
           <h2 class="titulo">ENTRAR</h2>
-          
+                    
           <div class="input-field">
             <div class="text-field">
               <input autocomplete="off" type="text" placeholder="..." name="email" required>
