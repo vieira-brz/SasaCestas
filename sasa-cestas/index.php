@@ -61,7 +61,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -120,7 +120,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -131,7 +131,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@
                             <p class="cesta">Original de Sasa Cestas</p>
                             <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
                             <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">SELECIONAR</button> </div>
+                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
                         </div>
                     </div>
                 </div>

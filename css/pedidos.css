@@ -1,0 +1,113 @@
+@import 'root.css';
+
+#etapas-pedido-titulo { margin: 50px 0 0 0; }
+
+/* RASTREAMENTO */
+.container-rastreador {
+    width: 100%;
+    /* height: 20px; */
+    height: 55vh;
+    display: flex;
+    padding: 40px 20px;
+    align-items: center;
+    justify-content: center;
+}
+.container-rastreador .dot { width: 320px; display: flex; position: relative; align-items: center; justify-content: center; }
+.container-rastreador .dot .status-pedido {
+    bottom: -30px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+}
+.container-rastreador .dot i { padding: 3px; border-radius: 50%; background: var(--background2); -webkit-box-shadow: 0 0 5px #00000030; font-size: 60px; }
+.container-rastreador .dot.active i { border-radius: 50%; color: var(--background); }
+.container-rastreador .dot:first-child i:after { width: 0px; height: 0px; }
+.container-rastreador .dot i::before { z-index: 1; }
+.container-rastreador .dot i::after {
+    top: 50%;
+    width: 90%;
+    height: 3px;
+    content: '';
+    z-index: -1;
+    left: -44.9%;
+    position: absolute;
+    transition: all .4s;
+    background-color: #7d7d7d;
+}
+.container-rastreador .dot.active i {
+    background: var(--effect);
+}
+.container-rastreador .dot.active i::after {
+    background: var(--effect);
+}
+
+
+
+
+/* TABELA */
+table {
+    width: 90%;
+    margin: 50px auto;
+    border-radius: 4px;
+    border-collapse: collapse;
+    background: var(--background2);
+    -webkit-box-shadow: 0 0 5px #00000030;
+}
+table thead th {
+    color: #9d9d9d;
+    padding: 10px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+table tbody td {
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+}
+table tbody td button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 4px;
+    background: var(--effect);
+}
+table tbody td button:hover { background: var(--vermelho); }
+table tbody td button i {
+    color: white;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 765px) {
+
+    main {
+        padding-bottom: 220px;
+    }
+
+    .container-rastreador { flex-direction: column; margin-top: 90px; padding-bottom: 40px; }
+    .container-rastreador .dot { margin: 40px 0 0 0; }
+
+    .container-rastreador .dot .status-pedido {
+        padding: 5px 10px;
+        border-radius: 4px;
+        background: var(--background);
+        -webkit-box-shadow: 0 0 10px #00000030;
+    }
+
+    .container-rastreador .dot i::after {
+        top: -4%;
+        width: 41%;
+        height: 2px;
+        content: '';
+        left: 29.1%;
+        transform: rotate(90deg);
+        background-color: #7d7d7d;
+    }
+
+}

@@ -35,19 +35,21 @@ html.dark { --effect-star: #c1c129; --effect-price: #2ca96e; }
 .linha-card-options .linha-card:first-child { margin: 25px 20px 25px 0; }
 .linha-card-options .linha-card:last-child { margin: 25px 0 25px 20px; }
 
+.linha-card-options .linha-card { cursor: pointer; }
 .linha-card-options .linha-card .texto {
     margin-top: 5px;
     font-weight: bold;
     font-size: 1.3rem;
     color: var(--effect);
 }
-.linha-card-options path, .linha-card-options svg { float: right; color: #d3d3d3; font-size: 25px; }
+.linha-card-options i, .linha-card-options i { float: right; color: #d3d3d3; font-size: 25px; }
 .linha-card-hover-action {
     top: 0;
     left: 0;
     width: 0px;
     height: 100%;
     display: flex;
+    cursor: pointer;
     overflow: hidden;
     position: absolute;
     border-radius: 4px;
@@ -124,15 +126,15 @@ html.dark { --effect-star: #c1c129; --effect-price: #2ca96e; }
     align-items: center;
     border-bottom: 1px solid lightgray;
 }
-.rate path {
+.rate i {
     padding: 5px;
     cursor: pointer;
     font-size: 14px;
     color: var(--effect-star);
     transition: .3s ease-out;
 }
-.rate svg { margin-right: 3px; }
-.rate path:hover { color: var(--effect-star); }
+.rate i { margin-right: 3px; }
+.rate i:hover { color: var(--effect-star); }
 .rate p { font-size: 16px; margin: 0 15px 0 5px; }
 
 .prices {

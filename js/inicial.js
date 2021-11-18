@@ -8,9 +8,9 @@ $(document).ready(function()
 
 
     // Removendo loaders
-    setTimeout(() => {
+    // setTimeout(() => {
         $('.loading').addClass('none');
         $('.not-loader').removeClass('none');
-    }, 1000);
+    // }, 1000);
 
 });

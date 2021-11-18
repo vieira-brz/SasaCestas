@@ -152,7 +152,7 @@ body {
   -webkit-box-shadow: 0 0 5px var(--shadow-google);
   transition: var(--transition_fast) ease-out;
 }
-.btn-effect path, .btn-effect svg { color: white; }
+.btn-effect i, .btn-effect i { color: white; }
 .btn-effect:hover { background: var(--vermelho); }
 
 input:disabled,
@@ -178,16 +178,16 @@ input:disabled + label {
   width: auto;
   height: auto;
 }
-.v-icon:hover path, .v-icon svg {
+.v-icon:hover i, .v-icon i {
   color: var(--effect);
 }
 
-h3.address, path, svg {
+h3.address, i, i {
   cursor: pointer;
   transition: .15s ease-out;
 }
 
-h3.address:hover, h3.address:hover path, h3.address:hover svg {
+h3.address:hover, h3.address:hover i, h3.address:hover i {
   color: var(--effect);
 }
 
@@ -350,7 +350,7 @@ header.toolbar .tools .relative-profile  { position: relative; }
   position: relative;
   margin-bottom: 10px; 
 }
-.container-profile-config .profile-config-edit svg { 
+.container-profile-config .profile-config-edit i { 
   bottom: 0;
   right: -5px;
   position: absolute;
@@ -358,7 +358,7 @@ header.toolbar .tools .relative-profile  { position: relative; }
   -webkit-box-shadow: 0 0 3px;
   background: var(--background2);
 }
-.container-profile-config .profile-config-edit svg { padding: 2px; }
+.container-profile-config .profile-config-edit i { padding: 2px; }
 
 
 
@@ -408,8 +408,8 @@ header.toolbar .config-tools .config-address {
   align-items: center;
   justify-content: center;
 }
-header.toolbar .config-tools .config-address:hover path,
-header.toolbar .config-tools .config-address:hover svg {
+header.toolbar .config-tools .config-address:hover i,
+header.toolbar .config-tools .config-address:hover i {
   color: var(--effect);
 }
 
@@ -424,15 +424,15 @@ header.toolbar .config-tools .config-address .config-address-settings {
   background: #272727;
   justify-content: center;
 }
-header.toolbar .config-tools .config-address  .config-address-settings path,
+header.toolbar .config-tools .config-address  .config-address-settings i,
 header.toolbar .config-tools .config-address  .config-address-settings label,
-header.toolbar .config-tools .config-address  .config-address-settings svg {
+header.toolbar .config-tools .config-address  .config-address-settings i {
   color: white;
   cursor: pointer;
 }
-header.toolbar .config-tools .config-address  .config-address-settings:hover path,
+header.toolbar .config-tools .config-address  .config-address-settings:hover i,
 header.toolbar .config-tools .config-address  .config-address-settings:hover label,
-header.toolbar .config-tools .config-address  .config-address-settings:hover svg {
+header.toolbar .config-tools .config-address  .config-address-settings:hover i {
   color: var(--effect);
 }
 
@@ -485,8 +485,8 @@ button.add-address-button {
 
 button.add-address-button:hover { background: var(--vermelho); }
 
-button.add-address-button path, 
-button.add-address-button svg {
+button.add-address-button i, 
+button.add-address-button i {
   color: var(--background2);
 }
 
@@ -524,9 +524,15 @@ button.add-address-button svg {
   flex-direction: column;
 }
 
-.dinamic-links .container-link:hover path,
-.dinamic-links .container-link:hover svg,
+.dinamic-links .container-link:hover i,
+.dinamic-links .container-link:hover i,
 .dinamic-links .container-link:hover label {
+  color: var(--effect);
+}
+
+.dinamic-links .container-link.active i,
+.dinamic-links .container-link.active i,
+.dinamic-links .container-link.active label {
   color: var(--effect);
 }
 
@@ -583,12 +589,12 @@ button.add-address-button svg {
   background: var(--background2);
 }
 
-.container-modal .modal .v-icon path,
-.container-modal .modal .v-icon svg {
+.container-modal .modal .v-icon i,
+.container-modal .modal .v-icon i {
   color: var(--cinza_escuro);
 }
-.container-modal .modal .v-icon:hover path,
-.container-modal .modal .v-icon:hover svg {
+.container-modal .modal .v-icon:hover i,
+.container-modal .modal .v-icon:hover i {
   color: var(--effect);
 }
 

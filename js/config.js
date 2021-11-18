@@ -106,5 +106,16 @@ $.get('../controllers/session', function(data)
             }
             e.stopImmediatePropagation();
         });
+
+
+        // MENU MARCADO 
+        let url = window.location.href.split('/'); url = url[url.length - 1];
+        switch (url) 
+        {
+            case '': $('.container-link:nth-child(1)').addClass('active'); break;
+            case 'historico': $('.container-link:nth-child(2)').addClass('active'); break;
+            case 'pedidos': $('.container-link:nth-child(3)').addClass('active'); break;
+            case 'carrinho': $('.container-link:nth-child(4)').addClass('active'); break;        
+        }
     });
 });
