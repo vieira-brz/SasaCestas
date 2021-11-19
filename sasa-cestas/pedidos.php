@@ -12,7 +12,7 @@
     <?php include 'template/head.html'; ?>
 
     <!-- JAVASCRIPT -->
-    <!-- <script src="../js/sobre.js"></script> -->
+    <script src="../js/pedidos.js"></script>
 
     <title>Sasa Cestas | Pedidos</title>
 </head>
@@ -23,7 +23,7 @@
     <script src="js/mo.config.js"></script>
 
     <div class="over-modal">
-        <?php include 'template/cabecalho.html'; ?>
+        <?php include 'template/cabecalho.php'; ?>
     
         <main>
 
@@ -44,7 +44,7 @@
 
             <?php if ($acesso == 'MASTER') { ?>
 
-                <table>
+                <table id="tabela-master">
                     <thead>
                         <th>#</th>
                         <th>PEDIDO</th>
@@ -52,15 +52,7 @@
                         <th>ENDEREÇO</th>
                         <th>AÇÕES</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1231</td>
-                            <td>CESTA DE CU</td>
-                            <td>R$ 49.9</td>
-                            <td>RUA CU D EBUNDA DO CARALHO DO MUNDO</td>
-                            <td><button name="ver-etapas">ETAPA PEDIDO <i class="fas fa-truck-loading"></i> </button></td>
-                        </tr>
-                    </tbody>
+                    <tbody> </tbody>
                 </table>
 
                 <div class="container-rastreador none">

@@ -26,7 +26,7 @@
     <script src="js/mo.config.js"></script>
 
     <div class="over-modal">
-        <?php include 'template/cabecalho.html'; ?>
+        <?php include 'template/cabecalho.php'; ?>
     
         <main>
             <div class="chart container-1">

@@ -15,10 +15,18 @@
                 <i class="fas fa-home"></i>
                 <label>Início</label>
             </a>
-            <a href="http://localhost/SasaCestas/sasa-cestas/historico" class="container-link">
-                <i class="fas fa-history"></i>
-                <label>Histórico</label>
-            </a>
+            <?php if ($acesso == 'MASTER') { ?>
+                <a href="http://localhost/SasaCestas/sasa-cestas/cestas" class="container-link">
+                    <i class="fas fa-shopping-basket"></i>
+                    <label>Cestas</label>
+                </a>
+            <?php } ?>
+            <?php if ($acesso != 'MASTER') { ?>
+                <a href="http://localhost/SasaCestas/sasa-cestas/historico" class="container-link">
+                    <i class="fas fa-history"></i>
+                    <label>Histórico</label>
+                </a>
+            <?php } ?>
             <a href="http://localhost/SasaCestas/sasa-cestas/pedidos" class="container-link">
                 <i class="fas fa-list-alt"></i>
                 <label>Pedidos</label>

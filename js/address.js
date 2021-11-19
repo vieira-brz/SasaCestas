@@ -278,6 +278,7 @@ $.get('../controllers/session', function(data)
                     headerEndereco = k.ENDERECO.replace('Rua', 'R.');
                     headerEndereco = k.ENDERECO.replace('Avenida', 'Av.');
 
+                    $('.tools').find('h3.address').attr('id', k.ID);
                     $('.tools').find('h3.address').html(headerEndereco +', '+ k.NUMERO +' &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i>');
                 }
                 else 

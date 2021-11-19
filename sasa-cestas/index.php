@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="over-modal">
-        <?php include_once 'template/cabecalho.html'; ?>
+        <?php include_once 'template/cabecalho.php'; ?>
         
         <main>
             <div class="not-loader none">
@@ -52,100 +52,8 @@
                 </div>
 
 
-                <!-- CESTAS 1 -->
-                <div class="cestas">
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- CESTAS 2 -->
-                <div class="cestas">
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="top-card"> <img src="https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/05/brigaderia_cesta-768x512.jpg" alt="image"> </div>
-                        <div class="mid-card">
-                            <h3>NOME CESTA</h3>
-                            <p class="cesta">Original de Sasa Cestas</p>
-                            <p class="description"> Descrição breve sobre esta cesta de café da manhã vinda do banco de dados... </p>
-                            <div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>
-                            <div class="prices"> <span>R$ 467.000</span> <button name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- CESTAS -->
+                <div class="cestas"></div>
             </div>
             
             <center> <div class="loading"> <img src="../img/loader.gif" alt="Carregando..."> </div> </center>
