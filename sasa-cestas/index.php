@@ -56,6 +56,7 @@
                 <div class="cestas"></div>
             </div>
             
+            <center> <div class="loading loading-no-data none"> <img style="margin: 0 20px 40px 20px;" src="../img/smile.png" alt="Sem dados..."> <h1>Nenhuma cesta cadastrada!</h1> </div> </center>
             <center> <div class="loading"> <img src="../img/loader.gif" alt="Carregando..."> </div> </center>
         </main>
     </div>

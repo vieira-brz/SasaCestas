@@ -681,3 +681,11 @@ button.add-address-button i {
       grid-template-columns: repeat(2, 48%) !important;
   }
 } */
+
+.loading-no-data img {
+  width: 300px;
+  color: red;
+  margin: 65px 20px;
+  border-radius: 50%;
+  background: var(--effect);
+}

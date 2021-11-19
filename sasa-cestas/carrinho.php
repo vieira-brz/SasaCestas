@@ -26,7 +26,8 @@
         <?php include 'template/cabecalho.php'; ?>
     
         <main>
-            <div class="nada-aqui"> <h1>NADA NO CARRINHO...</h1> <img src="https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif"> </div>
+            <center> <div class="loading loading-gif"> <img src="../img/loader.gif" alt="Sem dados..."> </div> </center>
+            <center> <div class="loading loading-no-data none"> <img src="../img/smile.png" alt="Sem dados..."> <h1>Nada no carrinho!</h1> </div> </center>
             <div class="container-car none"> </div>
         </main>
     </div>

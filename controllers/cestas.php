@@ -21,7 +21,21 @@ if (!empty($_POST))
             }
             else 
             {
-                echo 'Erro: Não foi possível cadastrar este endereço! Tente novamente.';
+                echo 'Erro: Não foi possível cadastrar a cesta! Tente novamente.';
+            }
+        break;
+
+        case 'delete':
+    
+            $retorno = $cestas->delete($_POST);
+    
+            if ($retorno == 1)
+            {
+                echo '1';
+            }
+            else 
+            {
+                echo 'Erro: Não foi possível deletar esta cesta! Tente novamente.';
             }
         break;
 

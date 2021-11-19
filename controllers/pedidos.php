@@ -24,6 +24,20 @@ if (!empty($_POST))
                 echo 'Erro: Não foi possível cadastrar este endereço! Tente novamente.';
             }
         break;
+        
+        case 'buscarId':
+    
+            $retorno = $pedidos->buscarId($_POST);
+    
+            if (is_array($retorno))
+            {
+                echo json_encode($retorno);
+            }
+            else 
+            {
+                echo 'Erro: Não foi possível buscar as cestas! Tente recarregar a página.';
+            }
+        break;
 
         case 'deletar':
     
@@ -55,6 +69,19 @@ if (!empty($_POST))
 
         case 'carregarTabela':
             $retorno = $pedidos->tabelaMaster();
+    
+            if (is_array($retorno))
+            {
+                echo json_encode($retorno);
+            }
+            else 
+            {
+                echo 'Erro: Não foi possível buscar as cestas! Tente recarregar a página.';
+            }
+        break;
+
+        case 'carregarTabelaToda':
+            $retorno = $pedidos->carregarTabelaToda();
     
             if (is_array($retorno))
             {

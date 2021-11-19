@@ -12,41 +12,47 @@ $.get('../controllers/session', function(data)
         setTimeout(() => 
         {
             let idEndereco = $('.tools').find('h3.address').attr('id');
+
+            $('.loading-gif').removeClass('none');
     
             $.post('../controllers/carrinho', { control: 'buscarCar', idU: configId }, function(response)
             {
+                $('.loading').addClass('none');
+
                 if (response.charAt(0) != '<' && response.charAt(0) != 'E')
                 {
                     let jsonParse = JSON.parse(response);
     
-                    $('.nada-aqui').addClass('none');
                     $('.container-car').removeClass('none');
                     
-                    $('.container-car').append(
-                        '<div class="car">'+
-                            '<div class="car-header"> <img src="../img/loader.gif"> </div>'+
-                            '<div class="car-body">'+
-                                '<div>'+
-                                    '<h4>'+ jsonParse[0].NOME_CESTA +'</h4>'+
-                                    '<h5 class="texto">'+ jsonParse[0].DESC_CESTA +'</h5>'+
+                    if (jsonParse[0].IMAGEM_CESTA == '')
+                    {
+                        $('.container-car').append(
+                            '<div class="car">'+
+                                '<div class="car-header"> <img src="../img/cesta-foto-padrao.jpg"> </div>'+
+                                '<div class="car-body">'+
+                                    '<div>'+
+                                        '<h4>'+ jsonParse[0].NOME_CESTA +'</h4>'+
+                                        '<h5 class="texto">'+ jsonParse[0].DESC_CESTA +'</h5>'+
+                                    '</div>'+
+                                    '<div class="config-pagamento">'+
+                                        '<h4>FORMA DE PAGAMENTO</h4>'+
+                                        '<select name="meio-pagamento">'+
+                                            '<option value="#">Selecione um item...</option>'+
+                                            '<option value="pix">PIX</option>'+
+                                            '<option value="debito">Cartão de débito</option>'+
+                                            '<option value="credito">Cartão de crédito</option>'+
+                                            '<option value="dupla">Cartão de débito/crédito</option>'+
+                                        '</select>'+
+                                    '</div>'+
+                                    '<button onclick="cancelar('+ jsonParse[0].ID_CARRINHO +')" name="cancelar" style="background:var(--dark) !important; margin-right: 10px;">CANCELAR COMPRA</button>'+
+                                    '<button onclick="confirmar('+ jsonParse[0].ID_CARRINHO +', '+ jsonParse[0].ID_USER +', '+ jsonParse[0].ID +', '+ idEndereco +')" name="comprar">CONFIRMAR COMPRA</button>'+
                                 '</div>'+
-                                '<div class="config-pagamento">'+
-                                    '<h4>FORMA DE PAGAMENTO</h4>'+
-                                    '<select name="meio-pagamento">'+
-                                        '<option value="#">Selecione um item...</option>'+
-                                        '<option value="pix">PIX</option>'+
-                                        '<option value="debito">Cartão de débito</option>'+
-                                        '<option value="credito">Cartão de crédito</option>'+
-                                        '<option value="dupla">Cartão de débito/crédito</option>'+
-                                    '</select>'+
-                                '</div>'+
-                                '<button onclick="cancelar('+ jsonParse[0].ID_CARRINHO +')" name="cancelar" style="background:var(--dark) !important; margin-right: 10px;">CANCELAR COMPRA</button>'+
-                                '<button onclick="confirmar('+ jsonParse[0].ID_CARRINHO +', '+ jsonParse[0].ID_USER +', '+ jsonParse[0].ID +', '+ idEndereco +')" name="comprar">CONFIRMAR COMPRA</button>'+
-                            '</div>'+
-                        '</div>'  
-                    );
+                            '</div>'  
+                        );
+                    }
                 }
-                else { noty('warning', 'Nada no carrinho!', '', true, false, true); }    
+                else { noty('warning', 'Nada no carrinho!', '', true, false, true); $('.loading-no-data').removeClass('none'); }    
             });
         }, 100);
     });    

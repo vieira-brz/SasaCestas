@@ -30,7 +30,7 @@
     
         <main>
             <div class="formulario">
-                
+                <center> <h1 style="margin-bottom:10px;">CADASTRO DE CESTAS</h1> </center>
                 <div class="input-field">
                     <div class="text-field">
                     <input autocomplete="off" type="text" placeholder="..." name="nome" required>

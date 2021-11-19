@@ -4,7 +4,6 @@
 
     class Cestas extends ModelConfiguration {
         
-        // Cadastro de usuários
         public function cadastrar($post)
         {
             $query = 'insert into '. $this->dbname .'.cestas (NOME_CESTA, DESC_CESTA, VALOR_CESTA, IMAGEM_CESTA) values("'. $post['nome'] .'", "'. $post['desc'] .'", '. $post['valor'] .', "");';
@@ -15,7 +14,16 @@
             return $stmt->rowCount();
         }        
         
-        // Recuperar todos os endereços do usuário
+        public function delete($post)
+        {
+            $query = 'delete from '. $this->dbname .'.cestas where ID = '. $post['id'] .';';
+            
+            $stmt = $this->conn->prepare($query);       
+
+            $stmt->execute();
+            return $stmt->rowCount();
+        }        
+        
         public function buscarCestas()
         {
             $query = 'select * from '. $this->dbname .'.cestas';

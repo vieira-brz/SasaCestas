@@ -12,7 +12,7 @@
     <?php include 'template/head.html'; ?>
 
     <!-- JAVASCRIPT -->
-    <!-- <script src="../js/sobre.js"></script> -->
+    <script src="../js/historico.js"></script>
 
     <title>Sasa Cestas | Pedidos</title>
 </head>
@@ -26,24 +26,22 @@
         <?php include 'template/cabecalho.php'; ?>
     
         <main>
-            <table>
-                <thead>
-                    <th>#</th>
-                    <th>PEDIDO</th>
-                    <th>PREÇO</th>
-                    <th>ENDEREÇO</th>
-                    <th>AÇÕES</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1231</td>
-                        <td>CESTA DE CU</td>
-                        <td>R$ 49.9</td>
-                        <td>RUA CU D EBUNDA DO CARALHO DO MUNDO</td>
-                        <td><button name="ver-etapas">ETAPA PEDIDO <i class="fas fa-truck-loading"></i> </button></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="history none">
+                <center id="etapas-pedido-titulo"> <h2 style="margin-top:40px;">HISTÓRICO DE PEDIDOS</h2> </center>
+                <table id="tabela-master">
+                    <thead>
+                        <th>#</th>
+                        <th>PEDIDO</th>
+                        <th>PREÇO</th>
+                        <th>ENDEREÇO</th>
+                        <!-- <th>AÇÕES</th> -->
+                    </thead>
+                    <tbody> </tbody>
+                </table>
+            </div>
+
+            <center> <div class="loading loading-gif"> <img src="../img/loader.gif" alt="Sem dados..."> </div> </center>
+            <center> <div class="loading loading-no-data none"> <img src="../img/smile.png" alt="Sem dados..."> <h1>Nenhum pedido realizado!</h1> </div> </center>
         </main> 
     </div>
 
