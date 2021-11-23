@@ -61,7 +61,7 @@ $(document).ready(function()
         type: 'doughnut',
         data:
         {
-            labels: ['Queijo', 'Presunto', 'Pão'],
+            labels: ['Premium', 'Doce', 'Vinho'],
             datasets: [
                 {
                     borderWidth: 2,

@@ -4,10 +4,10 @@
 
     class Cestas extends ModelConfiguration {
         
-        public function cadastrar($post)
+        public function cadastrar($post, $imagem, $tipo)
         {
-            $query = 'insert into '. $this->dbname .'.cestas (NOME_CESTA, DESC_CESTA, VALOR_CESTA, IMAGEM_CESTA) values("'. $post['nome'] .'", "'. $post['desc'] .'", '. $post['valor'] .', "");';
-            
+            $query = 'insert into '. $this->dbname .'.cestas (NOME_CESTA, DESC_CESTA, VALOR_CESTA, TIPO_IMAGEM, IMAGEM_CESTA) values("'. $post['nome'] .'", "'. $post['desc'] .'", '. $post['valor'] .', "'. $tipo .'", "'. $imagem .'");';           
+
             $stmt = $this->conn->prepare($query);       
 
             $stmt->execute();

@@ -57,7 +57,7 @@
                 
                 <div class="input-field">
                     <div class="text-field">
-                    <input autocomplete="off" type="file" placeholder="..." name="valor" required style="border: 2px solid var(--effect) !important;">
+                    <input autocomplete="off" type="file" placeholder="..." name="image" required style="border: 2px solid var(--effect) !important;">
                     <label>Escolha a foto referente á cesta:</label>
                     </div>
                     <small class="entrar-usuario none">* Campo email/usuário obrigatório</small>

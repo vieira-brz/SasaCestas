@@ -23,24 +23,23 @@ $.get('../controllers/session', function(data)
             {
                 $('.loading').addClass('none');
                 $('.not-loader').removeClass('none');
-
                 let jsonParse = JSON.parse(response);
                 $.each(jsonParse, function(index, key)
                 {
                     console.log(key);
-                    if (key.IMAGEM_CESTA == '')
+                    if (key.IMG == '')
                     {
                         if (configAcesso == 'MASTER')
                         {
                             $('.cestas').append(
-                                '<div class="card" id="'+ key.ID +'">'+
+                                '<div class="card" id="'+ key.DADOS.ID +'">'+
                                     '<div class="top-card"> <img style="border-bottom:1px solid #9d9d9d60;" src="../img/cesta-foto-padrao.jpg" alt="image"> </div>'+
                                     '<div class="mid-card">'+
-                                    '<h3>'+ key.NOME_CESTA +'</h3>'+
+                                    '<h3>'+ key.DADOS.NOME_CESTA +'</h3>'+
                                         '<p class="cesta">Original de Sasa Cestas</p>'+
-                                        '<p class="description"> '+ key.DESC_CESTA +'... </p>'+
-                                        '<div class="prices"> <span>R$ '+ key.VALOR_CESTA +'</span> <button onclick="excluir('+ key.ID +')" name="selecionar">EXCLUIR &nbsp<i class="fas fa-trash-alt" style="color:white;"></i></button> </div>'+
-                                        // '<div class="prices"> <span>R$ '+ key.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
+                                        '<p class="description"> '+ key.DADOS.DESC_CESTA +'... </p>'+
+                                        '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="excluir('+ key.DADOS.ID +')" name="selecionar">EXCLUIR &nbsp<i class="fas fa-trash-alt" style="color:white;"></i></button> </div>'+
+                                        // '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.DADOS.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
                                         // '<div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>'+
                                     '</div>'+
                                 '</div>'
@@ -49,14 +48,48 @@ $.get('../controllers/session', function(data)
                         else 
                         {
                             $('.cestas').append(
-                                '<div class="card" id="'+ key.ID +'">'+
+                                '<div class="card" id="'+ key.DADOS.ID +'">'+
                                     '<div class="top-card"> <img style="border-bottom:1px solid #9d9d9d60;" src="../img/cesta-foto-padrao.jpg" alt="image"> </div>'+
                                     '<div class="mid-card">'+
-                                    '<h3>'+ key.NOME_CESTA +'</h3>'+
+                                    '<h3>'+ key.DADOS.NOME_CESTA +'</h3>'+
                                         '<p class="cesta">Original de Sasa Cestas</p>'+
-                                        '<p class="description"> '+ key.DESC_CESTA +'... </p>'+
+                                        '<p class="description"> '+ key.DADOS.DESC_CESTA +'... </p>'+
                                         // '<div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>'+
-                                        '<div class="prices"> <span>R$ '+ key.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
+                                        '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.DADOS.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
+                                    '</div>'+
+                                '</div>'
+                            );
+                        }
+                    }
+                    else 
+                    {
+                        if (configAcesso == 'MASTER')
+                        {
+                            $('.cestas').append(
+                                '<div class="card" id="'+ key.DADOS.ID +'">'+
+                                    '<div class="top-card"> <img style="border-bottom:1px solid #9d9d9d60;" src="data:image/'+ key.EXT +';base64,'+ key.IMG +'" alt="image"/> </div>'+
+                                    '<div class="mid-card">'+
+                                    '<h3>'+ key.DADOS.NOME_CESTA +'</h3>'+
+                                        '<p class="cesta">Original de Sasa Cestas</p>'+
+                                        '<p class="description"> '+ key.DADOS.DESC_CESTA +'... </p>'+
+                                        '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="excluir('+ key.DADOS.ID +')" name="selecionar">EXCLUIR &nbsp<i class="fas fa-trash-alt" style="color:white;"></i></button> </div>'+
+                                        // '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.DADOS.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
+                                        // '<div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>'+
+                                    '</div>'+
+                                '</div>'
+                            );
+                        }
+                        else 
+                        {
+                            $('.cestas').append(
+                                '<div class="card" id="'+ key.DADOS.ID +'">'+
+                                    '<div class="top-card"> <img style="border-bottom:1px solid #9d9d9d60;" src="data:image/'+ key.EXT +';base64,'+ key.IMG +'" alt="image"/>  </div>'+
+                                    '<div class="mid-card">'+
+                                    '<h3>'+ key.DADOS.NOME_CESTA +'</h3>'+
+                                        '<p class="cesta">Original de Sasa Cestas</p>'+
+                                        '<p class="description"> '+ key.DADOS.DESC_CESTA +'... </p>'+
+                                        // '<div class="rate"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </div>'+
+                                        '<div class="prices"> <span>R$ '+ key.DADOS.VALOR_CESTA +'</span> <button onclick="cadastrar('+ key.DADOS.ID +', '+ configId +')" name="selecionar">CARRINHO &nbsp<i class="fas fa-shopping-cart" style="color:white;"></i></button> </div>'+
                                     '</div>'+
                                 '</div>'
                             );
@@ -64,7 +97,7 @@ $.get('../controllers/session', function(data)
                     }
                 });
             }
-            else { noty('warning', 'Preencha todos os campos!', '', true, false, true); $('.not-loader').removeClass('none'); $('.loading').addClass('none'); $('.loading-no-data').removeClass('none'); }        
+            else { noty('warning', 'Nenhuma cesta cadastrada!', '', true, false, true); $('.not-loader').removeClass('none'); $('.loading').addClass('none'); $('.loading-no-data').removeClass('none'); }        
         });
     });    
 });

@@ -8,7 +8,11 @@
 
     <div class="tools">
 
-        <h3 class="address">Clique para adicionar um endereço &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i> </h3>
+        <?php if ($acesso != 'MASTER') { ?>
+            <h3 class="address">Clique para adicionar um endereço &nbsp <i class="fas fa-chevron-down" style="margin-bottom:-.5%;"></i> </h3>
+        <?php } else { ?>
+            <h3 class="address"></h3>
+        <?php } ?>
 
         <div class="dinamic-links">
             <a href="http://localhost/SasaCestas/sasa-cestas" class="container-link">

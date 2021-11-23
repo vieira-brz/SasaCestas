@@ -45,7 +45,6 @@
             <?php } ?>
 
             <center> <div class="loading loading-gif"> <img src="../img/loader.gif" alt="Sem dados..."> </div> </center>
-
             <center> <div class="loading loading-no-data none"> <img src="../img/smile.png" alt="Sem dados...">  <h1>Todos os pedidos foram entregues!</h1> </div> </center>
 
             <table id="tabela-master" class="none">

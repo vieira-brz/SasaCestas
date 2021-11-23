@@ -37,7 +37,7 @@ $.get('../controllers/session', function(data)
                         );
                     });
                 }
-                else { noty('error', 'Nenhum pedido pendente!', '', true, false, true); }    
+                else { noty('error', 'Nenhum pedido pendente!', '', true, false, true); $('.loading').addClass('none'); $('.loading-no-data').removeClass('none'); }    
             });
         }
         else 
@@ -50,7 +50,7 @@ $.get('../controllers/session', function(data)
                     $('.loading').addClass('none');
                     
                     let jsonParse = JSON.parse(response);
-                    if (jsonParse.length == 1 && jsonParse[0].ID_USER != configId) { $('table').addClass('none'); $('.loading').removeClass('none'); $('#etapas-pedido-titulo').addClass('none'); }
+                    if (jsonParse.length == 1 && jsonParse[0].ID_USER != configId) { $('table').addClass('none'); $('.loading').addClass('none'); $('.loading-no-data').removeClass('none'); $('#etapas-pedido-titulo').addClass('none'); }
                     else 
                     {
                         $.each(jsonParse, function(index, key)
@@ -70,7 +70,7 @@ $.get('../controllers/session', function(data)
                         });
                     }
                 }
-                else { noty('error', 'Nenhum pedido pendente!', '', true, false, true); $('table').addClass('none'); $('.loading').removeClass('none'); $('#etapas-pedido-titulo').addClass('none'); }    
+                else { noty('error', 'Nenhum pedido pendente!', '', true, false, true); $('table').addClass('none'); $('.loading').addClass('none'); $('.loading-no-data').removeClass('none'); $('#etapas-pedido-titulo').addClass('none'); }    
             });
         }
 

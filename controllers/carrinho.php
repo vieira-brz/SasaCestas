@@ -58,6 +58,7 @@ if (!empty($_POST))
     
             if (is_array($retorno))
             {
+                $retorno = necessary_data($retorno);
                 echo json_encode($retorno);
             }
             else 
@@ -72,5 +73,14 @@ if (!empty($_POST))
 }
 else { var_dump($_POST); }
 
-
+function necessary_data($imagens)
+{
+  foreach ($imagens as $key)
+  {
+    $result[0]['EXT'] = $key["TIPO_IMAGEM"];
+    $result[0]['DADOS'] = array_map('utf8_encode', $key);
+    $result[0]['IMG'] = base64_encode($key["IMAGEM_CESTA"]);
+  }
+  return $result;
+}
 ?>

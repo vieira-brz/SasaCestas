@@ -25,15 +25,15 @@ $.get('../controllers/session', function(data)
     
                     $('.container-car').removeClass('none');
                     
-                    if (jsonParse[0].IMAGEM_CESTA == '')
+                    if (jsonParse[0].IMG == '')
                     {
                         $('.container-car').append(
                             '<div class="car">'+
                                 '<div class="car-header"> <img src="../img/cesta-foto-padrao.jpg"> </div>'+
                                 '<div class="car-body">'+
                                     '<div>'+
-                                        '<h4>'+ jsonParse[0].NOME_CESTA +'</h4>'+
-                                        '<h5 class="texto">'+ jsonParse[0].DESC_CESTA +'</h5>'+
+                                        '<h4>'+ jsonParse[0].DADOS.NOME_CESTA +'</h4>'+
+                                        '<h5 class="texto">'+ jsonParse[0].DADOS.DESC_CESTA +'</h5>'+
                                     '</div>'+
                                     '<div class="config-pagamento">'+
                                         '<h4>FORMA DE PAGAMENTO</h4>'+
@@ -45,8 +45,34 @@ $.get('../controllers/session', function(data)
                                             '<option value="dupla">Cartão de débito/crédito</option>'+
                                         '</select>'+
                                     '</div>'+
-                                    '<button onclick="cancelar('+ jsonParse[0].ID_CARRINHO +')" name="cancelar" style="background:var(--dark) !important; margin-right: 10px;">CANCELAR COMPRA</button>'+
-                                    '<button onclick="confirmar('+ jsonParse[0].ID_CARRINHO +', '+ jsonParse[0].ID_USER +', '+ jsonParse[0].ID +', '+ idEndereco +')" name="comprar">CONFIRMAR COMPRA</button>'+
+                                    '<button onclick="cancelar('+ jsonParse[0].DADOS.ID_CARRINHO +')" name="cancelar" style="background:var(--dark) !important; margin-right: 10px;">CANCELAR COMPRA</button>'+
+                                    '<button onclick="confirmar('+ jsonParse[0].DADOS.ID_CARRINHO +', '+ jsonParse[0].DADOS.ID_USER +', '+ jsonParse[0].DADOS.ID +', '+ idEndereco +')" name="comprar">CONFIRMAR COMPRA</button>'+
+                                '</div>'+
+                            '</div>'  
+                        );
+                    }
+                    else
+                    {
+                        $('.container-car').append(
+                            '<div class="car">'+
+                                '<div class="car-header" style="height:100%;"> <img style="height: 100%;" src="data:image/'+ jsonParse[0].EXT +';base64,'+ jsonParse[0].IMG +'" alt="image"/> </div>'+
+                                '<div class="car-body">'+
+                                    '<div>'+
+                                        '<h4>'+ jsonParse[0].DADOS.NOME_CESTA +'</h4>'+
+                                        '<h5 class="texto">'+ jsonParse[0].DADOS.DESC_CESTA +'</h5>'+
+                                    '</div>'+
+                                    '<div class="config-pagamento">'+
+                                        '<h4>FORMA DE PAGAMENTO</h4>'+
+                                        '<select name="meio-pagamento">'+
+                                            '<option value="#">Selecione um item...</option>'+
+                                            '<option value="pix">PIX</option>'+
+                                            '<option value="debito">Cartão de débito</option>'+
+                                            '<option value="credito">Cartão de crédito</option>'+
+                                            '<option value="dupla">Cartão de débito/crédito</option>'+
+                                        '</select>'+
+                                    '</div>'+
+                                    '<button onclick="cancelar('+ jsonParse[0].DADOS.ID_CARRINHO +')" name="cancelar" style="background:var(--dark) !important; margin-right: 10px;">CANCELAR COMPRA</button>'+
+                                    '<button onclick="confirmar('+ jsonParse[0].DADOS.ID_CARRINHO +', '+ jsonParse[0].DADOS.ID_USER +', '+ jsonParse[0].DADOS.ID +', '+ idEndereco +')" name="comprar">CONFIRMAR COMPRA</button>'+
                                 '</div>'+
                             '</div>'  
                         );
