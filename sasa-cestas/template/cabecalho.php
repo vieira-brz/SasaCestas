@@ -35,10 +35,12 @@
                 <i class="fas fa-list-alt"></i>
                 <label>Pedidos</label>
             </a>
-            <a href="http://localhost/SasaCestas/sasa-cestas/carrinho" class="container-link">
-                <i class="fas fa-shopping-cart"></i>
-                <label>Carrinho</label>
-            </a>
+            <?php if ($acesso != 'MASTER') { ?>
+                    <a href="http://localhost/SasaCestas/sasa-cestas/carrinho" class="container-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <label>Carrinho</label>
+                    </a>
+            <?php } ?>
         </div>
 
         <div class="relative-profile">

@@ -91,6 +91,7 @@ $.get('../controllers/session', function(data)
 function verEtapas(id)
 {
     $('table').addClass('none');
+    $('.container-rastreador').find('.dot').each(function(el){$(this).removeClass('active');});
     $('.container-rastreador').attr('id', id);
     $('[name="voltarBtn"]').removeClass('none');
     $('.container-rastreador').removeClass('none');

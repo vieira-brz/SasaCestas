@@ -41,17 +41,17 @@ $.get('../controllers/session', function(data)
                     mode: 'cors' ,
                     cache: 'default'
                 }
-                setTimeout(() => {
+                // setTimeout(() => {
                     
-                    fetch(`https://viacep.com.br/ws/${search}/json/`, options)
-                    .then(response => 
-                    {
-                        response.json().then( data => showData(data))
-                        $('.modal-cadastro-endereco').find('.loading').addClass('none');
-                        $('.modal-body-endereco-grid').each(function(el){$(this).removeClass('none');});
-                    })
-                    .catch(e => console.log('Erro: '+ e.message))
-                }, 2000);
+                fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+                .then(response => 
+                {
+                    response.json().then( data => showData(data))
+                    $('.modal-cadastro-endereco').find('.loading').addClass('none');
+                    $('.modal-body-endereco-grid').each(function(el){$(this).removeClass('none');});
+                })
+                .catch(e => console.log('Erro: '+ e.message))
+                // }, 2000);
 
                 cep.focusout();
                 $('.input-field').each(function(el){$(this).removeClass('none');});
